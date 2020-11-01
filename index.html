@@ -13,25 +13,43 @@
   <meta property="og:locale" content="zh_CN">
   <meta property="article:author" content="mgt">
   <style>
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #131313;
+        color: #cccccc;
+      }
+    }
+
     #site_name {
       display: inline;
       padding-top: 20px;
       position: relative;
       font-weight: 900;
       font-size: 7em;
-      /* font-size: 1em; */
-      background: linear-gradient(90deg, #6818aa, #0d67bb);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      user-select: none;
     }
 
     #banner {
       text-align: center;
-      user-select: none;
       min-height: calc(100vh - 20px);
       display: flex;
       flex-direction: column;
       justify-content: center;
+    }
+
+    #details {
+      line-height: 1em;
+      font-family: 'Fira Code', 'JetBrains Mono', Consolas, monospace;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #6818aa, #0d67bb);
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+    }
+
+    .sptext-1 {
+      color: #DB4D6D;
     }
   </style>
 </head>
@@ -40,14 +58,40 @@
   <div style="max-width: 800px; margin: 0 auto;">
     <div id="banner">
       <p>
-        <a href="https://mgt.moe" id="site_name">
+        <a href="https://mgt.moe" id="site_name" class="gradient-text">
           mgt.moe
         </a>
       </p>
+      <div id="details">
+        <p>
+          <span class="sptext-1">|></span> mgt == Margatroid =~ Magnetic != Megaton !! <span
+            class="sptext-1">&lt;|</span> </p>
+        <p>
+          Arch Linux ~~> KDE \/ i3 / VSCode \/ Vim / fish / 2-spaces
+        </p>
+        <p>
+          CS@HUST / @OI-Wiki / Lab@UniqueStudio
+        </p>
+        <span class="gradient-text" style="font-weight: bold;">
+          ||===============Keep Learning==============>>
+        </span>
+      </div>
     </div>
   </div>
 </body>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css">
+<style>
+  body {
+    font-family: 'Fira Code', monospace;
+    font-feature-settings: "ss07"
+  }
 
+  @supports (font-variation-settings: normal) {
+    code {
+      font-family: 'Fira Code VF', monospace;
+    }
+  }
+</style>
 <script>
   function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
