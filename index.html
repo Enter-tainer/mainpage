@@ -1,0 +1,74 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>mgt.moe</title>
+  <meta property="og:url" content="https://mgt.moe">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="mgt.moe">
+  <!-- <meta property="og:image" content="https://mgt.moe/favicon.ico">
+  <meta property="og:image:alt" content="A description of what is in the image (not a caption)"> -->
+  <meta property="og:description" content="mgt's website">
+  <meta property="og:site_name" content="mgt.moe">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="article:author" content="mgt">
+  <style>
+    #site_name {
+      display: inline;
+      padding-top: 20px;
+      position: relative;
+      font-weight: 900;
+      font-size: 7em;
+      /* font-size: 1em; */
+      background: linear-gradient(90deg, #6818aa, #0d67bb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    #banner {
+      text-align: center;
+      user-select: none;
+      min-height: calc(100vh - 20px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div style="max-width: 800px; margin: 0 auto;">
+    <div id="banner">
+      <p>
+        <a href="https://mgt.moe" id="site_name">
+          mgt.moe
+        </a>
+      </p>
+    </div>
+  </div>
+</body>
+
+<script>
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+  const prefixes = ["blog", "pb", "math"]
+  const base = "mgt.moe"
+  const text = document.getElementById("site_name")
+  let prefixPtr = 0
+  async function setText(str) {
+    text.href = `https://${str}.${base}`
+    for (let i = 0; i < str.length; ++i) {
+      const link = str.slice(0, i + 1) + "." + base
+      text.innerText = link
+      await sleep(Math.random() * 400)
+    }
+  }
+  setInterval(async () => {
+    text.innerText = base
+    text.href = `https://${base}`
+    setText(prefixes[prefixPtr])
+    prefixPtr++
+    prefixPtr %= prefixes.length
+  }, 6000)
+</script>
