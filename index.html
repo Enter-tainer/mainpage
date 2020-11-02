@@ -32,7 +32,7 @@
 
     #details {
       line-height: 2vh;
-      font-size: 1vw;
+      font-size: 16px;
       font-family: 'Fira Code', 'JetBrains Mono', Consolas, monospace;
     }
 
@@ -53,11 +53,17 @@
     .sptext-3 {
       color: #3A8FB7;
     }
+
+    @media (max-width: 500px) {
+      .hide-below-500 {
+        display: none;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <div style="max-width: 80vw; margin: 0 auto;">
+  <div style="max-width: 800px; margin: 0 auto;">
     <div id="banner">
       <p>
         <a href="https://mgt.moe" id="site_name" class="gradient-text">
@@ -66,9 +72,9 @@
       </p>
       <div id="details">
         <p>
-          <span class="sptext-1">|></span> mgt <span class="sptext-2">==</span> Margatroid <span
-            class="sptext-2">=~</span> Magnet <span class="sptext-1">!=</span> Megaton !! <span
-            class="sptext-1">&lt;|</span>
+          <span class="sptext-1 hide-below-500">|></span> mgt <span class="sptext-2">==</span> Margatroid <span
+            class="sptext-2">=~</span> Magnet <span class="sptext-1">!=</span> Megaton <span class="hide-below-500">!!
+            <span class="sptext-1">&lt;|</span></span>
         </p>
         <p>
           Arch Linux <span class="sptext-2">~~></span> KDE <span class="sptext-2">/</span> VSCode <span
@@ -80,7 +86,8 @@
           Lab<span class="sptext-3">@</span>UniqueStudio
         </p>
         <span class="gradient-text">
-          ||===============Keep Learning==============>>
+          <span class="hide-below-500">||=============== </span>Keep Learning<span class="hide-below-500">
+            ==============>></span>
         </span>
       </div>
     </div>
